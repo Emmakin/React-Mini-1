@@ -1,4 +1,8 @@
 import React from "react";
+//where to put the svg icons
+
+import React,{useState} from "react";
+
 
 function App() {
   return (
@@ -19,6 +23,9 @@ function Navbar(props){
 }
 
 function NavItem(props){
+
+  const [open, setOpen] = useState(false);  
+  
   return(
     <li className="nav-item">
       <a href="#"className="icon-button">
