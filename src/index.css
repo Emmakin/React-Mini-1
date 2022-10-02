@@ -109,3 +109,23 @@ a {
 .icon.right {
   margin-left: auto;
 }
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+
+}
+
+.menu-primary-enter-active {
+  transform: translateX();
+  transition: all var(--speed) ease;
+
+}
+
+.menu-primary-exit {
+  position: absolute;
+}
+
+.menu-primary-exit-active {
+
+}

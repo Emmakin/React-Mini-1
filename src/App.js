@@ -53,12 +53,24 @@ function DropdownMenu() {
   }
   return (
     <div className="dropdown">
+      <CSSTransition 
+      in={activeMenu === 'main'}
+      unmountOnExit 
+      timeout={500}
+      classNames = "menu-primary"
+      >
+
+        <div className="menu">
+
+      
           <DropdownItem>My Profile</DropdownItem>
           <DropdownItem
             leftIcon ={<CogIcon />}
             rightIcon ={<ChevronIcon />}>
-
-      </DropdownItem>
+              Settings
+          </DropdownItem>
+        </div>
+      </CSSTransition>
     </div>
   );
 }
