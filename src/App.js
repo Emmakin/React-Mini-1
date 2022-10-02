@@ -71,6 +71,25 @@ function DropdownMenu() {
           </DropdownItem>
         </div>
       </CSSTransition>
+
+      <CSSTransition 
+      in={activeMenu === 'settings'}
+      unmountOnExit 
+      timeout={500}
+      classNames = "menu-secondary"
+      >
+
+        <div className="menu">
+
+      
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem
+            leftIcon ={<CogIcon />}
+            rightIcon ={<ChevronIcon />}>
+              Settings
+          </DropdownItem>
+        </div>
+      </CSSTransition>
     </div>
   );
 }
