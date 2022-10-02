@@ -131,3 +131,23 @@ a {
   transition: all var(--speed) ease;
 }
 
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+
+.menu-secondary-enter-active {
+  transform: translate(0%);
+  transition: all var(--speed) ease;
+
+}
+
+.menu-secondary-exit {
+
+}
+
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+
+}
+
