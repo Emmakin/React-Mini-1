@@ -4,7 +4,7 @@ import {ReactComponent as BellIcon } from './icons/bell.svg';
 import {ReactComponent as CaretIcon } from './icons/caret.svg';
 import {ReactComponent as ChevronIcon } from './icons/chevron.svg';
 import {ReactComponent as  CogIcon } from './icons/cog.svg';
-// import {ReactComponent as  DownArrow } from  './icons/down-arrow.svg';
+import {ReactComponent as  DownArrow } from  './icons/down-arrow.svg';
 import {ReactComponent as  MessengerIcon } from './icons/messenger.svg';
 import {ReactComponent as  PlusIcon } from './icons/plus.svg';
 
@@ -39,6 +39,7 @@ function Navbar(props){
 function DropdownMenu() {
 
     const [activeMenu, setActiveMenu] = useState('main');
+    const [menuHeight, setMenuHeight] = useState(null);
 
   function DropdownItem(props) {
       return (
@@ -62,11 +63,15 @@ function DropdownMenu() {
 
         <div className="menu">
 
-      
+
           <DropdownItem>My Profile</DropdownItem>
           <DropdownItem
             leftIcon ={<CogIcon />}
-            rightIcon ={<ChevronIcon />}>
+            rightIcon ={<ChevronIcon />}
+            goToMenu="settings"
+            >
+             
+             
               Settings
           </DropdownItem>
         </div>
@@ -78,16 +83,17 @@ function DropdownMenu() {
       timeout={500}
       classNames = "menu-secondary"
       >
-
-        <div className="menu">
-
-      
+          <div className="menu">
+          
+          <DropdownItem leftIcon ={<DownArrow />} goToMenu="main" />
           <DropdownItem>Settings</DropdownItem>
-          <DropdownItem
-            leftIcon ={<CogIcon />}
-            rightIcon ={<ChevronIcon />}>
-              Settings
-          </DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
+          <DropdownItem>Settings</DropdownItem>
         </div>
       </CSSTransition>
     </div>
