@@ -1,10 +1,10 @@
 // import React from "react";
-import {ReactComponent as BellIcon } from './icons/bell.svg';
+import {ReactComponent as BellIcon } from './icons/bell1.svg';
 // import {ReactComponent as BoltIcon } from './icons/bolt.svg';
 import {ReactComponent as CaretIcon } from './icons/caret.svg';
 import {ReactComponent as ChevronIcon } from './icons/chevron.svg';
 import {ReactComponent as  CogIcon } from './icons/cog.svg';
-import {ReactComponent as  DownArrow } from  './icons/down-arrow.svg';
+import {ReactComponent as  LeftArrow } from  './icons/left-arrow.svg';
 import {ReactComponent as  MessengerIcon } from './icons/messenger.svg';
 import {ReactComponent as  PlusIcon } from './icons/plus.svg';
 
@@ -41,6 +41,13 @@ function DropdownMenu() {
     const [activeMenu, setActiveMenu] = useState('main');
     const [menuHeight, setMenuHeight] = useState(null);
 
+    function calcHeight(el) {
+      const height = el.offsetHeight;
+      setMenuHeight(height);
+
+
+    }
+
   function DropdownItem(props) {
       return (
         <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
@@ -53,12 +60,13 @@ function DropdownMenu() {
       );
   }
   return (
-    <div className="dropdown">
+    <div className="dropdown" style={{ height: menuHeight }}>
       <CSSTransition 
       in={activeMenu === 'main'}
       unmountOnExit 
       timeout={500}
       classNames = "menu-primary"
+      onEnter={calcHeight}
       >
 
         <div className="menu">
@@ -85,7 +93,7 @@ function DropdownMenu() {
       >
           <div className="menu">
           
-          <DropdownItem leftIcon ={<DownArrow />} goToMenu="main" />
+          <DropdownItem leftIcon ={<LeftArrow />} goToMenu="main" />
           <DropdownItem>Settings</DropdownItem>
           <DropdownItem>Settings</DropdownItem>
           <DropdownItem>Settings</DropdownItem>
