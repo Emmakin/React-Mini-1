@@ -128,4 +128,5 @@ a {
 
 .menu-primary-exit-active {
   transform: translate(-110%);
+  transition: all var(--speed) ease;
 }
